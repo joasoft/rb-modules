@@ -4,7 +4,7 @@
 	<div id="category">
 		<div class="title">
 			<span class="add">
-			<a href="<?php echo $g['s']?>/?r=<?php echo $r?>&amp;m=<?php echo $m?>&amp;module=marketv2&amp;front=pack&amp;type=theme_extend" title="테마 추가"><img src="<?php echo $g['img_core']?>/_public/btn_add.gif" alt="" /></a>
+			<a href="<?php echo $g['s']?>/?r=<?php echo $r?>&amp;m=<?php echo $m?>&amp;module=market2&amp;front=pack&amp;type=theme_extend" title="테마 추가"><img src="<?php echo $g['img_core']?>/_public/btn_add.gif" alt="" /></a>
 			</span>
 			테마리스트
 		</div>
