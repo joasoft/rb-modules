@@ -15,7 +15,7 @@
 		<tr>
 			<td class="td1">큐마켓<br />URL</td>
 			<td class="td2">
-				<input type="text" name="url" value="<?php echo $d['market']['url']?>" size="30" class="input" />
+				<input type="text" name="url" value="<?php echo $d['marketv2']['url']?>" size="30" class="input" />
 			</td>
 		</tr>
 	</table>
@@ -31,13 +31,13 @@
 		<tr>
 			<td class="td1">아이디 or 이메일</td>
 			<td class="td2">
-				<input type="text" name="id" value="<?php echo $d['market']['id']?>" size="30" class="input" />
+				<input type="text" name="id" value="<?php echo $d['marketv2']['id']?>" size="30" class="input" />
 			</td>
 		</tr>
 		<tr>
 			<td class="td1">비밀번호</td>
 			<td class="td2">
-				<input type="password" name="pw" value="<?php echo $d['market']['pw']?>" size="30" class="input" />
+				<input type="password" name="pw" value="<?php echo $d['marketv2']['pw']?>" size="30" class="input" />
 
 				<div class="guide">
 					킴스큐 공식사이트(www.kimsq.com)의 회원정보를 입력해 주세요.<br />

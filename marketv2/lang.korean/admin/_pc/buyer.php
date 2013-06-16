@@ -1,8 +1,8 @@
 <?php 
 include $g['path_module'].$module.'/var/var.php';
-if($d['market']['url']&&$d['market']['id']&&$d['market']['pw']):
+if($d['marketv2']['url']&&$d['marketv2']['id']&&$d['marketv2']['pw']):
 include $g['path_core'].'function/rss.func.php';
-$marketData = getUrlData($d['market']['url'].'&iframe=Y&page=client.buyer&_clientu='.$g['s'].'&_clientr='.$r.'&cat='.$cat.'&theme='.$theme.'&sort='.$sort.'&orderby='.$orderby.'&type='.$type.'&ptype='.$ptype.'&p='.$p.'&todayfree='.$todayfree.'&sailing='.$sailing.'&where='.$where.'&keyword='.$keyword.'&brand='.$brand.'&id='.$d['market']['id'].'&pw='.$d['market']['pw'],10);
+$marketData = getUrlData($d['marketv2']['url'].'&iframe=Y&page=client.buyer&_clientu='.$g['s'].'&_clientr='.$r.'&cat='.$cat.'&theme='.$theme.'&sort='.$sort.'&orderby='.$orderby.'&type='.$type.'&ptype='.$ptype.'&p='.$p.'&todayfree='.$todayfree.'&sailing='.$sailing.'&where='.$where.'&keyword='.$keyword.'&brand='.$brand.'&id='.$d['marketv2']['id'].'&pw='.$d['marketv2']['pw'],10);
 $marketData = explode('[RESULT:',$marketData);
 $marketData = explode(':RESULT]',$marketData[1]);
 $marketData = $marketData[0];

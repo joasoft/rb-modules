@@ -41,14 +41,14 @@
 		<td class="td1">버젼</td>
 		<td>:</td>
 		<td class="td2">
-			1.2
+			1.0
 		</td>
 	</tr>
 	<tr>
 		<td class="td1">최근업데이트</td>
 		<td>:</td>
 		<td class="td2">
-			2012.11.09
+			2013.06.16
 		</td>
 	</tr>
 	</table>
@@ -58,33 +58,73 @@
 	<h2>제작사 정보</h2>
 	<table>
 	<tr>
-		<td class="td1">제작사</td>
-		<td>:</td>
-		<td class="td2">레드블럭</td>
-	</tr>
-	<tr>
-		<td class="td1">회원아이디</td>
-		<td>:</td>
-		<td class="td2">세븐고(kims)</td>
-	</tr>
-	<tr>
-		<td class="td1">이메일</td>
-		<td>:</td>
-		<td class="td2"><a href="mailto:admin@kimsq.com">admin@kimsq.com</a></td>
-	</tr>
-	<tr>
-		<td class="td1">홈페이지</td>
-		<td>:</td>
-		<td class="td2">
-			<a href="http://www.kimsq.com/rb/" target="_blank">www.kimsq.com/rb/</a>
+		<td width="400px">
+			<table>
+			<tr>
+				<td class="td1">커스텀 제작사</td>
+				<td>:</td>
+				<td class="td2">joasoft</td>
+			</tr>
+			<tr>
+				<td class="td1">회원아이디</td>
+				<td>:</td>
+				<td class="td2">joasoft</td>
+			</tr>
+			<tr>
+				<td class="td1">이메일</td>
+				<td>:</td>
+				<td class="td2"><a href="mailto:joasoft13@gmail.com">joasoft13@gmail.com</a></td>
+			</tr>
+			<tr>
+				<td class="td1">홈페이지</td>
+				<td>:</td>
+				<td class="td2">
+					<a href="http://www.joasoft.net" target="_blank">www.joasoft.net</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="td1">라이센스</td>
+				<td>:</td>
+				<td class="td2">
+					RBL
+				</td>
+			</tr>
+			</table>
 		</td>
-	</tr>
-	<tr>
-		<td class="td1">라이센스</td>
-		<td>:</td>
-		<td class="td2">
-			RBL
+		<td>
+			<table>
+			<tr>
+				<td class="td1">원 제작사</td>
+				<td>:</td>
+				<td class="td2">레드블럭</td>
+			</tr>
+			<tr>
+				<td class="td1">회원아이디</td>
+				<td>:</td>
+				<td class="td2">세븐고(kims)</td>
+			</tr>
+			<tr>
+				<td class="td1">이메일</td>
+				<td>:</td>
+				<td class="td2"><a href="mailto:admin@kimsq.com">admin@kimsq.com</a></td>
+			</tr>
+			<tr>
+				<td class="td1">홈페이지</td>
+				<td>:</td>
+				<td class="td2">
+					<a href="http://www.kimsq.com/rb/" target="_blank">www.kimsq.com/rb/</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="td1">라이센스</td>
+				<td>:</td>
+				<td class="td2">
+					RBL
+				</td>
+			</tr>
+			</table>		
 		</td>
+
 	</tr>
 	</table>
 

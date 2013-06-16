@@ -23,7 +23,7 @@ if ($type == 'switch')
 }
 if ($type == 'bbstheme')
 {
-	DirDelete($g['path_module'].'bbs/theme/'.$pack);
+	DirDelete($g['path_module'].'bbsv2/theme/'.$pack);
 }
 
 if ($type == 'widget')

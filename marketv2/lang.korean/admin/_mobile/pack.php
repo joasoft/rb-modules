@@ -25,6 +25,7 @@ $type = $type ? $type : 'package';
 	<li<?php if($type=='widget'):?> class="selected"<?php endif?>><a href="<?php echo $g['adm_href']?>&amp;type=widget">위젯</a></li>
 	<li<?php if($type=='switch'):?> class="selected"<?php endif?>><a href="<?php echo $g['adm_href']?>&amp;type=switch">스위치</a></li>
 	<li<?php if($type=='theme'):?> class="selected"<?php endif?>><a href="<?php echo $g['adm_href']?>&amp;type=theme">게시판</a></li>
+	<li<?php if($type=='theme_extend'):?> class="selected"<?php endif?>><a href="<?php echo $g['adm_href']?>&amp;type=theme">게시판<span class="num">(확장)</span></a></li>
 	</ul>
 	<div class="clear"></div>
 	</div>
@@ -394,6 +395,48 @@ function getDirlist($dirpath,$nStep)
 		<ul>
 		<?php $i=0?>
 		<?php $tdir = $g['path_module'].'bbs/theme/'.$subfolder.'/'?>
+		<?php $dirs = opendir($tdir)?>
+		<?php while(false !== ($skin = readdir($dirs))):?>
+		<?php if($skin=='.' || $skin == '..' || is_file($tdir.$skin))continue?>
+		<?php $i++?>
+		<li<?php if($insfolder==$skin):?> class="insfolder"<?php endif?>>
+			<img src="<?php echo $g['img_core']?>/_public/ico_folder_01.gif" alt="" />
+			<?php echo getFolderName($tdir.$skin)?><span>(<?php echo $skin?>)</span>
+			<a href="<?php echo $g['s']?>/?r=<?php echo $r?>&amp;m=<?php echo $module?>&amp;a=pack_delete&amp;type=bbstheme&amp;pack=<?php echo $subfolder?>/<?php echo $skin?>" target="_action_frame_<?php echo $m?>" onclick="return confirm('정말로 삭제하시겠습니까?    ');"><img src="<?php echo $g['img_core']?>/_public/btn_del_s01.gif" alt="" title="테마삭제" /></a>
+		</li>
+		<?php endwhile?>
+		<?php closedir($dirs)?>
+		<?php if(!$i):?>
+		<li class="none">
+			<img src="<?php echo $g['img_core']?>/_public/ico_folder_01.gif" alt="" />
+			등록된 테마가 없습니다.
+		</li>
+		<?php endif?>
+		</ul>
+	</div>
+
+
+
+	</div>
+
+<?php endif?>
+<!-- //테마 -->
+
+
+
+<!-- 테마 -->
+<?php if($type == 'theme_extend'):?>
+<?php $subfolder = $subfolder ? $subfolder : '_pc'?>
+
+	<div class="m_pack">
+
+	<div class="themelist">
+		<div class="title">
+			설치된 게시판 테마들
+		</div>
+		<ul>
+		<?php $i=0?>
+		<?php $tdir = $g['path_module'].'bbsv2/theme/'.$subfolder.'/'?>
 		<?php $dirs = opendir($tdir)?>
 		<?php while(false !== ($skin = readdir($dirs))):?>
 		<?php if($skin=='.' || $skin == '..' || is_file($tdir.$skin))continue?>

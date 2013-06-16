@@ -25,6 +25,7 @@ $type = $type ? $type : 'package';
 	<li<?php if($type=='widget'):?> class="selected"<?php endif?>><a href="<?php echo $g['adm_href']?>&amp;type=widget">위젯</a></li>
 	<li<?php if($type=='switch'):?> class="selected"<?php endif?>><a href="<?php echo $g['adm_href']?>&amp;type=switch">스위치</a></li>
 	<li<?php if($type=='theme'):?> class="selected"<?php endif?>><a href="<?php echo $g['adm_href']?>&amp;type=theme">게시판테마</a></li>
+	<li<?php if($type=='theme_extend'):?> class="selected"<?php endif?>><a href="<?php echo $g['adm_href']?>&amp;type=theme_extend">게시판테마<span class="num">(확장)</span></a></li>
 	<li<?php if($type=='etc'):?> class="selected"<?php endif?>><a href="<?php echo $g['adm_href']?>&amp;type=etc">기타자료</a></li>
 	</ul>
 	<div class="clear"></div>
@@ -524,6 +525,70 @@ function getDirlist($dirpath,$nStep)
 
 <?php endif?>
 <!-- //테마 -->
+
+
+<!-- 확장테마 -->
+<?php if($type == 'theme_extend'):?>
+<?php $subfolder = $subfolder ? $subfolder : '_pc'?>
+
+	<div class="m_pack">
+	<form name="procForm" action="<?php echo $g['s']?>/" method="post" enctype="multipart/form-data" target="_action_frame_<?php echo $m?>" onsubmit="return saveCheck(this);">
+	<input type="hidden" name="r" value="<?php echo $r?>" />
+	<input type="hidden" name="m" value="<?php echo $module?>" />
+	<input type="hidden" name="a" value="pack_upload" />
+	<input type="hidden" name="type" value="bbstheme" />
+	<input type="hidden" name="folder" value="<?php echo $g['path_module']?>bbsv2/theme/" />
+
+	<div class="msg">
+		패키지파일을 선택하신 후 등록버튼을 클릭해 주세요.<br />
+		패키지는 /modules/<span class="num">bbsv2</span>/theme/(_pc/_mobile)/ 에 등록됩니다.<br />
+		게시판테마 패키지의 형식은 <span class="b">rb_bbstheme_압축폴더명.zip</span> 이어야 합니다.
+	</div>
+	
+	<div class="btnbox">
+	테마구분 : 
+	<input type="radio" name="subfolder" id="subfolder1" value="_pc/"<?php if($subfolder=='_pc'):?> checked="checked"<?php endif?> onclick="goHref('<?php echo $g['s']?>/?r=<?php echo $r?>&m=<?php echo $m?>&module=<?php echo $module?>&front=<?php echo $front?>&type=<?php echo $type?>&subfolder=_pc');" /><label for="subfolder1">PC모드용</label>
+	<input type="radio" name="subfolder" id="subfolder2" value="_mobile/"<?php if($subfolder=='_mobile'):?> checked="checked"<?php endif?> onclick="goHref('<?php echo $g['s']?>/?r=<?php echo $r?>&m=<?php echo $m?>&module=<?php echo $module?>&front=<?php echo $front?>&type=<?php echo $type?>&subfolder=_mobile');" /><label for="subfolder2">모바일모드용</label>
+	<input type="file" name="upfile" class="upfile" />
+	<input type="submit" value="등록하기" class="btnblue" />
+	</div>
+	</form>
+
+
+	<div class="themelist">
+		<div class="title">
+			등록된 테마들
+		</div>
+		<ul>
+		<?php $i=0?>
+		<?php $tdir = $g['path_module'].'bbsv2/theme/'.$subfolder.'/'?>
+		<?php $dirs = opendir($tdir)?>
+		<?php while(false !== ($skin = readdir($dirs))):?>
+		<?php if($skin=='.' || $skin == '..' || is_file($tdir.$skin))continue?>
+		<?php $i++?>
+		<li<?php if($insfolder==$skin):?> class="insfolder"<?php endif?>>
+			<img src="<?php echo $g['img_core']?>/_public/ico_folder_01.gif" alt="" />
+			<?php echo getFolderName($tdir.$skin)?><span>(<?php echo $skin?>)</span>
+			<a href="<?php echo $g['s']?>/?r=<?php echo $r?>&amp;m=<?php echo $module?>&amp;a=pack_delete&amp;type=bbstheme&amp;pack=<?php echo $subfolder?>/<?php echo $skin?>" target="_action_frame_<?php echo $m?>" onclick="return confirm('정말로 삭제하시겠습니까?    ');"><img src="<?php echo $g['img_core']?>/_public/btn_del_s01.gif" alt="" title="테마삭제" /></a>
+		</li>
+		<?php endwhile?>
+		<?php closedir($dirs)?>
+		<?php if(!$i):?>
+		<li class="none">
+			<img src="<?php echo $g['img_core']?>/_public/ico_folder_01.gif" alt="" />
+			등록된 테마가 없습니다.
+		</li>
+		<?php endif?>
+		</ul>
+	</div>
+
+
+
+	</div>
+
+<?php endif?>
+<!-- //확장테마 -->
+
 
 
 <!-- 스위치 -->
